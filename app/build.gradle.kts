@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services") version "4.4.1" apply true
 }
 
 android {
@@ -8,8 +9,8 @@ android {
 
     defaultConfig {
         applicationId = "com.yaml.pizzeriashopunal"
-        minSdk = 24
-        targetSdk = 33
+        minSdk = 30
+        targetSdk = 30
         versionCode = 1
         versionName = "1.0"
 
@@ -29,6 +30,21 @@ android {
 }
 
 dependencies {
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
+
+    // Firebase Core and Analytics
+    implementation("com.google.firebase:firebase-core:21.1.1")
+    implementation("com.google.firebase:firebase-analytics")
+
+    // Firebase Authentication and Firestore
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-database:20.3.1")
 
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
