@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.yaml.pizzeriashopunal"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.yaml.pizzeriashopunal"
