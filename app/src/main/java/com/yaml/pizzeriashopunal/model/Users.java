@@ -1,5 +1,8 @@
 package com.yaml.pizzeriashopunal.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Users {
     // Atributos de la clase Usuario
     private String id; // Identificador único del usuario
@@ -81,5 +84,16 @@ public class Users {
     // Establece la fecha de nacimiento del usuario
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public Map<String, Object> toMap() {
+        Map<String, Object> result = new HashMap<>();
+        result.put("id", id); // Agrega el ID al mapa
+        result.put("email", email); // Agrega el email al mapa
+        result.put("phone", phone); // Agrega el telefono al mapa
+        result.put("username", username); // Agrega los nombres al mapa
+        result.put("lastname", lastname); // Agrega los apellidos al mapa
+        result.put("date", date); // Agrega la fecha de nacimiento al mapa
+        return result; // Devuelve el mapa con las propiedades del producto
     }
 }
