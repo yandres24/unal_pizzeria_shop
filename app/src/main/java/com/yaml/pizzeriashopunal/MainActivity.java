@@ -240,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
         String id = editTextId.getText().toString();
         String name = editTextName.getText().toString();
         double price = Double.parseDouble(editTextPrice.getText().toString());
-        Products Products = new Products(id, name, price);
+        Products Products = new Products(id, name, price, 1);
         databaseHelper.updateProduct(Products);
         loadProductsFromDatabase();
         buttonAdd.setText("Agregar");

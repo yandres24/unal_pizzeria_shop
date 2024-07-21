@@ -9,6 +9,7 @@ public class Products {
     private String name; // Nombre del producto
     private double price; // Precio del producto
     private int amount; // Indica la cantidad de productos
+    private boolean deleted; // Indica si el producto ha sido eliminado
 
     // Constructor vacío necesario para ciertas integraciones como Firebase
     public Products() {
@@ -64,6 +65,16 @@ public class Products {
 
     //Establece la cantidad de articulos de un producto
     public void setAmount(int amount) { this.amount = amount; }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    // Establece el estado de eliminación del producto
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
+
 
     // Convierte las propiedades del producto en un mapa para almacenamiento o envío
     public Map<String, Object> toMap() {
