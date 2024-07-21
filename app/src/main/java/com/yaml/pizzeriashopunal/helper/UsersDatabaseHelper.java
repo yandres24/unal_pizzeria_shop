@@ -14,7 +14,7 @@ import java.util.List;
 
 public class UsersDatabaseHelper {
     private DatabaseHelper databaseHelper;
-    public void initDataBase(Context context){
+    public UsersDatabaseHelper(Context context){
         databaseHelper = new DatabaseHelper(context);
     }
 

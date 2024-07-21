@@ -4,10 +4,6 @@ import static com.yaml.pizzeriashopunal.utils.constants.*;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import com.yaml.pizzeriashopunal.model.Products;
 
@@ -16,7 +12,7 @@ import java.util.List;
 
 public class ProductsDatabaseHelper {
     private DatabaseHelper databaseHelper;
-    public void initDataBase(Context context){
+    public ProductsDatabaseHelper(Context context){
         databaseHelper = new DatabaseHelper(context);
     }
 
