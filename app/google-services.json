@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:637631475222:android:c2e2f316ca71e0d3a48f37",
+        "mobilesdk_app_id": "1:637631475222:android:e526cf2f293aef06a48f37",
         "android_client_info": {
-          "package_name": "com.yaml.pizzeria.shop.unal"
+          "package_name": "com.yaml.pizzeriashopunal"
         }
       },
       "oauth_client": [],

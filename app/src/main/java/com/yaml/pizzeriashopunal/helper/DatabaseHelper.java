@@ -65,9 +65,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Método para insertar un registro en una determinada tabla
     public boolean insert(String tableName, ContentValues values) {
-        if (isExist(tableName, values.get(COLUMN_ID).toString())) {
-            Log.i("DatabaseHelper", "Registro con ID " + values.get(COLUMN_ID).toString() + " ya existe.");
-            return true; // Detener la ejecución si el registro ya existe
+        Object id = values.get(COLUMN_ID);
+        if(id != null) {
+            if (isExist(id.toString(), tableName)) {
+                Log.i("DatabaseHelper", "Registro con ID " + values.get(COLUMN_ID).toString() + " ya existe.");
+                return true; // Detener la ejecución si el registro ya existe
+            }
         }
 
         SQLiteDatabase db = null;

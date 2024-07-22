@@ -1,5 +1,6 @@
 package com.yaml.pizzeriashopunal.helper;
 
+import static com.google.common.base.Strings.nullToEmpty;
 import static com.yaml.pizzeriashopunal.utils.constants.TABLE_ORDERS;
 import static com.yaml.pizzeriashopunal.utils.constants.TABLE_PRODUCTS;
 
@@ -32,7 +33,8 @@ public class OrdersDatabaseHelper {
         List<Orders> getOrders = new ArrayList<>();
         List<ContentValues> responseHelper = databaseHelper.getAll(TABLE_ORDERS);
         for(ContentValues itemList : responseHelper) {
-            Orders orders = new Orders(itemList.get("id").toString(), itemList.get("user_id").toString(), itemList.get("date").toString());
+            String date = nullToEmpty(itemList.get("date") != null ? (String) itemList.get("date") : "");
+            Orders orders = new Orders(itemList.get("id").toString(), itemList.get("user_id").toString(), date);
             getOrders.add(orders);
         }
         return getOrders;

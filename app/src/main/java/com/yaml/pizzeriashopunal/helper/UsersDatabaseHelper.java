@@ -1,5 +1,6 @@
 package com.yaml.pizzeriashopunal.helper;
 
+import static com.google.common.base.Strings.nullToEmpty;
 import static com.yaml.pizzeriashopunal.utils.constants.TABLE_PRODUCTS;
 import static com.yaml.pizzeriashopunal.utils.constants.TABLE_USERS;
 
@@ -35,8 +36,9 @@ public class UsersDatabaseHelper {
         List<Users> getUsers = new ArrayList<>();
         List<ContentValues> responseHelper = databaseHelper.getAll(TABLE_USERS);
         for(ContentValues itemList : responseHelper) {
+            String date = nullToEmpty(itemList.get("date") != null ? (String) itemList.get("date") : "");
             Users users = new Users(itemList.get("id").toString(), itemList.get("email").toString(), itemList.get("phone").toString(),
-                    itemList.get("username").toString(), itemList.get("lastname").toString(), itemList.get("date").toString());
+                    itemList.get("username").toString(), itemList.get("lastname").toString(), date);
             getUsers.add(users);
         }
         return getUsers;

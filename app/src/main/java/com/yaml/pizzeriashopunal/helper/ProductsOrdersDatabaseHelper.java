@@ -1,5 +1,6 @@
 package com.yaml.pizzeriashopunal.helper;
 
+import static com.google.common.base.Strings.nullToEmpty;
 import static com.yaml.pizzeriashopunal.utils.constants.TABLE_PRODUCTS;
 import static com.yaml.pizzeriashopunal.utils.constants.TABLE_PRODUCTSORDERS;
 
@@ -34,8 +35,10 @@ public class ProductsOrdersDatabaseHelper {
         List<ProductsOrders> getProductsOrders = new ArrayList<>();
         List<ContentValues> responseHelper = databaseHelper.getAll(TABLE_PRODUCTSORDERS);
         for(ContentValues itemList : responseHelper) {
+            String amount = nullToEmpty(itemList.get("amount") != null ? (String) itemList.get("amount") : "0");
+            String price = nullToEmpty(itemList.get("price") != null ? (String) itemList.get("price") : "0");
             ProductsOrders productsOrders = new ProductsOrders(itemList.get("id").toString(), itemList.get("order_id").toString(), itemList.get("product_id").toString(),
-                    (int)itemList.get("amount"), (double)itemList.get("price"));
+                    Integer.parseInt(amount), Double.parseDouble(price));
             getProductsOrders.add(productsOrders);
         }
         return getProductsOrders;

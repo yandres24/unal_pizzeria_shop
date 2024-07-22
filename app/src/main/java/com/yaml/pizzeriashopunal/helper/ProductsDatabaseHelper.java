@@ -1,5 +1,6 @@
 package com.yaml.pizzeriashopunal.helper;
 
+import static com.google.common.base.Strings.nullToEmpty;
 import static com.yaml.pizzeriashopunal.utils.constants.*;
 
 import android.content.ContentValues;
@@ -30,7 +31,8 @@ public class ProductsDatabaseHelper {
         List<Products> getProducts = new ArrayList<>();
         List<ContentValues> responseHelper = databaseHelper.getAll(TABLE_PRODUCTS);
         for(ContentValues itemList : responseHelper) {
-            Products products = new Products(itemList.get("id").toString(), itemList.get("name").toString(), (double)itemList.get("price"), (int)itemList.get("amount"));
+            String amount = nullToEmpty(itemList.get("amount") != null ? (String) itemList.get("amount") : "0");
+            Products products = new Products(itemList.get("id").toString(), itemList.get("name").toString(), Double.parseDouble(itemList.get("price").toString()), Integer.parseInt(amount));
             getProducts.add(products);
         }
         return getProducts;
