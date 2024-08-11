@@ -1,4 +1,4 @@
-package com.yaml.pizzeriashopunal.adapter;
+package com.yaml.pizzeriashopunal.presenter.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -1,6 +1,4 @@
-package com.yaml.pizzeriashopunal;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.yaml.pizzeriashopunal.view;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -8,12 +6,15 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.yaml.pizzeriashopunal.presenter.adapter.ProductsAdapter;
+import com.yaml.pizzeriashopunal.R;
+import com.yaml.pizzeriashopunal.model.Products;
 import com.yaml.pizzeriashopunal.model.helper.ProductsDatabaseHelper;
 import com.yaml.pizzeriashopunal.model.helper.ProductsFirebaseHelper;
-import com.yaml.pizzeriashopunal.model.Products;
+import com.yaml.pizzeriashopunal.presenter.adapter.ProductsAdapter;
 import com.yaml.pizzeriashopunal.utils.monitor.NetworkMonitor;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class MainActivity extends AppCompatActivity {
+public class ProductActivity extends AppCompatActivity {
     // Componentes de la interfaz de usuario
     private EditText editTextId, editTextName, editTextPrice;
     private Button buttonAdd, buttonGetFirebase, buttonSichronized, buttonGetSqlite;
@@ -29,14 +30,14 @@ public class MainActivity extends AppCompatActivity {
 
     // Objetos de ayuda
     private ProductsDatabaseHelper databaseHelper;
-    private ProductsAdapter ProductsAdapter;
+    private com.yaml.pizzeriashopunal.presenter.adapter.ProductsAdapter ProductsAdapter;
     private ProductsFirebaseHelper firebaseHelper;
     private NetworkMonitor networkMonitor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_product);
 
         initializeUIComponents();
         initializeHelpers();
@@ -53,13 +54,13 @@ public class MainActivity extends AppCompatActivity {
         buttonGetFirebase = findViewById(R.id.buttonGetFirebase);
         buttonSichronized = findViewById(R.id.buttonSichronized);
         buttonGetSqlite = findViewById(R.id.buttonGetSqlite);
-        //listViewProducts = findViewById(R.id.listViewProducts);
-
+        listViewProducts = findViewById(R.id.listViewProducts);
         // Inicializar la base de datos y el adaptador
         databaseHelper = new ProductsDatabaseHelper(this);
+        //databaseHelper.addProduct(new Products("1", "prueba", 100.0, 5));
         List<Products> products = databaseHelper.getAllProducts();
-        //ProductsAdapter = new ProductsAdapter(this, R.layout.list_item_product, products);
-        //listViewProducts.setAdapter(ProductsAdapter);
+        ProductsAdapter = new ProductsAdapter(this, R.layout.list_item_product, products);
+        listViewProducts.setAdapter(ProductsAdapter);
     }
 
     // Inicializa los objetos de ayuda
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseUser user = auth.getCurrentUser();
                 // Puedes usar el user.getUid() para identificar al usuario si es necesario
             } else {
-                Toast.makeText(MainActivity.this, "Error al iniciar sesión anónimo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(com.yaml.pizzeriashopunal.view.ProductActivity.this, "Error al iniciar sesión anónimo", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onError() {
-                Toast.makeText(MainActivity.this, "Error al obtener productos de Firebase", Toast.LENGTH_SHORT).show();
+                Toast.makeText(com.yaml.pizzeriashopunal.view.ProductActivity.this, "Error al obtener productos de Firebase", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -128,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
     // Métodos relacionados con la sincronización de datos
     private void synchronizeData() {
         if (!networkMonitor.isNetworkAvailable()) {
-            Toast.makeText(MainActivity.this, "No hay conexión a internet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(com.yaml.pizzeriashopunal.view.ProductActivity.this, "No hay conexión a internet", Toast.LENGTH_SHORT).show();
             return;
         }
         synchronizeAndRemoveData();
@@ -164,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onError() {
-                Toast.makeText(MainActivity.this, "Error al obtener productos de Firebase", Toast.LENGTH_SHORT).show();
+                Toast.makeText(com.yaml.pizzeriashopunal.view.ProductActivity.this, "Error al obtener productos de Firebase", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -185,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void onError(Exception e) {
-                                Toast.makeText(MainActivity.this, "Error al agregar producto a Firebase: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(com.yaml.pizzeriashopunal.view.ProductActivity.this, "Error al agregar producto a Firebase: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
@@ -193,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onError() {
-                    Toast.makeText(MainActivity.this, "Error al verificar existencia del producto en Firebase", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(com.yaml.pizzeriashopunal.view.ProductActivity.this, "Error al verificar existencia del producto en Firebase", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -204,12 +205,12 @@ public class MainActivity extends AppCompatActivity {
             firebaseHelper.deleteProduct(productToDelete.getId(), new ProductsFirebaseHelper.DeleteProductCallback() {
                 @Override
                 public void onSuccess() {
-                    Toast.makeText(MainActivity.this, "Producto eliminado de Firebase", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(com.yaml.pizzeriashopunal.view.ProductActivity.this, "Producto eliminado de Firebase", Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
                 public void onError(Exception e) {
-                    Toast.makeText(MainActivity.this, "Error al eliminar producto de Firebase: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(com.yaml.pizzeriashopunal.view.ProductActivity.this, "Error al eliminar producto de Firebase: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }
