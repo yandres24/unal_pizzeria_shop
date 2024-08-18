@@ -8,10 +8,9 @@
     <!-- ImageView Header -->
     <ImageView
         android:id="@+id/imageViewHeader"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:src="@drawable/headerfooter"
-        android:layout_marginTop="-75dp"
+        android:layout_width="fill_parent"
+        android:layout_height="140dp"
+        android:src="@drawable/header_home"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -21,9 +20,10 @@
         android:id="@+id/textViewTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:text="@string/tittle_add_product"
         android:textSize="28sp"
         android:textStyle="bold"
+        android:layout_marginTop="20dp"
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/imageViewHeader"
         app:layout_constraintStart_toStartOf="parent"
@@ -142,16 +142,4 @@
         app:layout_constraintTop_toBottomOf="@id/buttonSichronized"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- ImageView Footer -->
-    <ImageView
-        android:id="@+id/imageViewFooter"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:src="@drawable/headerfooter"
-        android:layout_marginBottom="-80dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

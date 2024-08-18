@@ -3,6 +3,7 @@
     <!-- Definición de price_format -->
     <string name="price_format">%.2f</string>
     <!-- Otros Strings del activity_main-->
+    <string name="tittle_add_product">Agregar producto</string>
     <string name="hint_id">ID</string>
     <string name="hint_name">Nombre</string>
     <string name="hint_price">Precio</string>
