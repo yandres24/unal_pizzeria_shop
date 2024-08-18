@@ -24,7 +24,7 @@ import java.util.Set;
 
 public class ProductActivity extends AppCompatActivity {
     // Componentes de la interfaz de usuario
-    private EditText editTextId, editTextName, editTextPrice;
+    private EditText editTextId, editTextName, editTextPrice, editTextAmount;
     private Button buttonAdd, buttonGetFirebase, buttonSichronized, buttonGetSqlite;
     private ListView listViewProducts;
 
@@ -50,6 +50,7 @@ public class ProductActivity extends AppCompatActivity {
         editTextId = findViewById(R.id.editTextId);
         editTextName = findViewById(R.id.editTextName);
         editTextPrice = findViewById(R.id.editTextPrice);
+        editTextAmount = findViewById(R.id.editTextAmount);
         buttonAdd = findViewById(R.id.buttonAdd);
         buttonGetFirebase = findViewById(R.id.buttonGetFirebase);
         buttonSichronized = findViewById(R.id.buttonSichronized);
@@ -226,7 +227,8 @@ public class ProductActivity extends AppCompatActivity {
 
         String name = editTextName.getText().toString();
         double price = Double.parseDouble(editTextPrice.getText().toString());
-        Products newProduct = new Products(name, price);
+        int amount = Integer.parseInt(editTextAmount.getText().toString());
+        Products newProduct = new Products("", name, price, amount);
         databaseHelper.addProduct(newProduct);
         loadProductsFromDatabase();
         clearInputFields();
