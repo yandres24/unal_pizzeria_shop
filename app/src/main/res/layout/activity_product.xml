@@ -86,6 +86,8 @@
     <!-- Button Agregar -->
     <Button
         android:id="@+id/buttonAdd"
+        android:background="@drawable/button_style"
+        app:backgroundTint="@null"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/button_add"
@@ -97,10 +99,11 @@
     <!-- LinearLayout Botones -->
     <LinearLayout
         android:id="@+id/linearlayoutbuttons"
+        android:layout_marginTop="15dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         app:layout_constraintTop_toBottomOf="@id/buttonAdd"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,13 +111,18 @@
 
         <Button
             android:id="@+id/buttonGetSqlite"
+            android:background="@drawable/button_style"
+            app:backgroundTint="@null"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/button_get_sqlite" />
 
         <Button
             android:id="@+id/buttonGetFirebase"
+            android:background="@drawable/button_style"
+            app:backgroundTint="@null"
             android:layout_width="150dp"
+            android:layout_marginStart="50dp"
             android:layout_height="wrap_content"
             android:text="@string/button_get_firebase" />
     </LinearLayout>
@@ -122,6 +130,9 @@
     <!-- Button Sincronizar Firebase -->
     <Button
         android:id="@+id/buttonSichronized"
+        android:background="@drawable/button_style"
+        app:backgroundTint="@null"
+        android:layout_marginTop="15dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/button_synchronize_firebase"
