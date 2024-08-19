@@ -8,13 +8,12 @@
     <!-- Imagen de cabecera -->
     <ImageView
         android:id="@+id/header_image"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/headerandfooter"
-        android:layout_marginTop="-125dp"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:src="@drawable/header_home"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Título -->
     <TextView
@@ -26,6 +25,7 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:paddingBottom="16dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintTop_toBottomOf="@id/header_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -70,7 +70,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/AuthenticationActivity_login_button_text"
-                android:layout_marginBottom="16dp" />
+                android:background="@drawable/button_style"
+                app:backgroundTint="@null"
+                android:layout_marginBottom="30dp" />
 
             <!-- Botón de inicio de sesión con Google -->
             <Button
@@ -78,21 +80,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/AuthenticationActivity_google_login_button_text"
-                android:layout_marginBottom="16dp" />
+                android:background="@drawable/button_style"
+                app:backgroundTint="@null"
+                android:layout_marginBottom="30dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-    <!-- Explicación de autenticación -->
-    <TextView
-        android:id="@+id/authentication_explanation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/AuthenticationActivity_authentication_explanation"
-        android:paddingTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/auth_card"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
 
     <!-- Imagen de pie de página -->
     <ImageView

@@ -12,11 +12,15 @@
     <string name="button_get_sqlite">Información local</string>
     <string name="button_get_firebase">Obtener de la nube</string>
     <string name="button_synchronize_firebase">Sincronizar nube</string>
+    <string name="tittle_add_order">Agregar orden</string>
     <!-- String del layout de los items -->
     <string name="item_button_add">Editar</string>
     <string name="item_button_delete">Eliminar</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Productos</string>
+    <string name="title_notifications">Notifications</string>
 
-    <string name="AuthenticationActivity_Logintitle_title">Autenticación de Usuario</string>
+    <string name="AuthenticationActivity_Logintitle_title">Inicio de sesión</string>
     <string name="AuthenticationActivity_username_hint">Nombre de usuario</string>
     <string name="AuthenticationActivity_password_hint">Contraseña</string>
     <string name="AuthenticationActivity_login_button_text">Iniciar sesión</string>

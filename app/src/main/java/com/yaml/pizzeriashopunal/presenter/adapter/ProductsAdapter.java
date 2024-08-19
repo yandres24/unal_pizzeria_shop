@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.yaml.pizzeriashopunal.MainActivity;
+import com.yaml.pizzeriashopunal.view.ProductActivity;
 import com.yaml.pizzeriashopunal.R;
 import com.yaml.pizzeriashopunal.model.Products;
 
@@ -74,16 +74,16 @@ public class ProductsAdapter extends ArrayAdapter<Products> {
 
             // Asignar listeners a los botones
             buttonEdit.setOnClickListener(v -> {
-                // Llamar al método editProduct de MainActivity con el producto a editar
-                if (mContext instanceof MainActivity) {
-                    ((MainActivity) mContext).editProduct(product);
+                // Llamar al método editProduct de ProductActivity con el producto a editar
+                if (mContext instanceof ProductActivity) {
+                    ((ProductActivity) mContext).editProduct(product);
                 }
             });
 
             buttonDelete.setOnClickListener(v -> {
-                // Llamar al método deleteProduct de MainActivity con el producto a eliminar
-                if (mContext instanceof MainActivity) {
-                    ((MainActivity) mContext).deleteProduct(product);
+                // Llamar al método deleteProduct de ProductActivity con el producto a eliminar
+                if (mContext instanceof ProductActivity) {
+                    ((ProductActivity) mContext).deleteProduct(product);
                 }
             });
         }

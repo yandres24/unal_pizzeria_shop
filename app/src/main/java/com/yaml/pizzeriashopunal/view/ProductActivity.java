@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.yaml.pizzeriashopunal.R;
@@ -25,7 +26,8 @@ import java.util.Set;
 public class ProductActivity extends AppCompatActivity {
     // Componentes de la interfaz de usuario
     private EditText editTextId, editTextName, editTextPrice, editTextAmount;
-    private Button buttonAdd, buttonGetFirebase, buttonSichronized, buttonGetSqlite;
+    private Button buttonAdd, buttonSichronized;
+    private FloatingActionButton buttonGetFirebase, buttonGetSqlite;
     private ListView listViewProducts;
 
     // Objetos de ayuda
