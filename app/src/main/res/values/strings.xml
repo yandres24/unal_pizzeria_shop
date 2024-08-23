@@ -23,6 +23,11 @@
     <string name="hint_userId">Usuario</string>
     <string name="hint_date">Fecha</string>
 
+    <string name="hint_email">Correo electronico</string>
+    <string name="hint_phone">Telefono</string>
+    <string name="hint_user_name">Nombres</string>
+    <string name="hint_last_name">Apellidos</string>
+    <string name="hint_birthdate">Fecha Cumpleaños</string>
 
     <string name="AuthenticationActivity_Logintitle_title">Inicio de sesión</string>
     <string name="AuthenticationActivity_username_hint">Nombre de usuario</string>
@@ -32,5 +37,6 @@
     <string name="AuthenticationActivity_authentication_explanation">Aquí explicaremos qué es la autenticación de usuario, los diferentes tipos y su importancia en el desarrollo de software.</string>
     <string name="AuthenticationActivity_footer_image_description">Descripción de la imagen de pie de página</string>
     <string name="default_web_client_id">637631475222-4kh1h4v5atj594fnv80qnlsi36s1itkg.apps.googleusercontent.com</string>
+    <string name="tittle_add_user">Agregar Usuario</string>
 
 </resources>
