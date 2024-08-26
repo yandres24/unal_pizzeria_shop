@@ -28,6 +28,9 @@
     <string name="hint_user_name">Nombres</string>
     <string name="hint_last_name">Apellidos</string>
     <string name="hint_birthdate">Fecha Cumpleaños</string>
+    <string name="tittle_add_product_for_order">Agregar producto para una orden</string>
+    <string name="hint_order">Pedido</string>
+    <string name="hint_product">Producto</string>
 
     <string name="AuthenticationActivity_Logintitle_title">Inicio de sesión</string>
     <string name="AuthenticationActivity_username_hint">Nombre de usuario</string>
