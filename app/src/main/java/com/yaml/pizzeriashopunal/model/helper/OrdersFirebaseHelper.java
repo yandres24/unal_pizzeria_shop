@@ -1,4 +1,4 @@
-package com.yaml.pizzeriashopunal.helper;
+package com.yaml.pizzeriashopunal.model.helper;
 
 import androidx.annotation.Nullable;
 
@@ -8,7 +8,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.yaml.pizzeriashopunal.model.Orders;
-import com.yaml.pizzeriashopunal.model.Products;
 
 import java.util.ArrayList;
 import java.util.List;

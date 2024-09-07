@@ -11,6 +11,7 @@ public class Users {
     private String username; // Nombres
     private String lastname; // Apellidos
     private String date; // Fecha de nacimiento
+    private boolean deleted; // Indica si el producto ha sido eliminado
 
     // Constructor vacío necesario para ciertas integraciones como Firebase
     public Users() {
@@ -84,6 +85,15 @@ public class Users {
     // Establece la fecha de nacimiento del usuario
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    // Establece el estado de eliminación del producto
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 
     public Map<String, Object> toMap() {

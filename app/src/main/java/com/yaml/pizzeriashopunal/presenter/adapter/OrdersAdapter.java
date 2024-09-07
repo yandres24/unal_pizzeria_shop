@@ -1,4 +1,4 @@
-package com.yaml.pizzeriashopunal.adapter;
+package com.yaml.pizzeriashopunal.presenter.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,13 +8,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.yaml.pizzeriashopunal.MainActivity;
+import com.yaml.pizzeriashopunal.view.OrderActivity;
 import com.yaml.pizzeriashopunal.R;
-import com.yaml.pizzeriashopunal.model.Products;
+import com.yaml.pizzeriashopunal.model.Orders;
 
 import java.util.List;
 
-public class ProductsAdapter extends ArrayAdapter<Products> {
+public class OrdersAdapter extends ArrayAdapter<Orders> {
 
     // Recursos de diseño y contexto
     private int resourceLayout;
@@ -24,7 +24,7 @@ public class ProductsAdapter extends ArrayAdapter<Products> {
     private boolean hideButtons = false;
 
     // Constructor del adaptador
-    public ProductsAdapter(Context context, int resource, List<Products> items) {
+    public OrdersAdapter(Context context, int resource, List<Orders> items) {
         super(context, resource, items);
         this.resourceLayout = resource;
         this.mContext = context;
@@ -46,11 +46,11 @@ public class ProductsAdapter extends ArrayAdapter<Products> {
             view = inflater.inflate(resourceLayout, parent, false);
         }
 
-        // Obtener el producto actual
-        Products product = getItem(position);
+        // Obtener el ordero actual
+        Orders order = getItem(position);
 
-        // Si el producto es válido, establecer los valores en la vista
-        if (product != null) {
+        // Si el ordero es válido, establecer los valores en la vista
+        if (order != null) {
             // Obtener las vistas de nombre y precio
             TextView textViewName = view.findViewById(R.id.textViewName);
             TextView textViewPrice = view.findViewById(R.id.textViewPrice);
@@ -59,9 +59,9 @@ public class ProductsAdapter extends ArrayAdapter<Products> {
             Button buttonEdit = view.findViewById(R.id.buttonEdit);
             Button buttonDelete = view.findViewById(R.id.buttonDelete);
 
-            // Establecer el nombre y el precio del producto en los TextView
-            textViewName.setText(product.getName());
-            textViewPrice.setText(String.format(mContext.getString(R.string.price_format), product.getPrice()));
+            // Establecer el nombre y el precio del ordero en los TextView
+            textViewName.setText(order.getId());
+            textViewPrice.setText(order.getUser_id());
 
             // Controlar la visibilidad de los botones según la variable hideButtons
             if (hideButtons) {
@@ -74,16 +74,16 @@ public class ProductsAdapter extends ArrayAdapter<Products> {
 
             // Asignar listeners a los botones
             buttonEdit.setOnClickListener(v -> {
-                // Llamar al método editProduct de MainActivity con el producto a editar
-                if (mContext instanceof MainActivity) {
-                    ((MainActivity) mContext).editProduct(product);
+                // Llamar al método editOrder de OrderActivity con el ordero a editar
+                if (mContext instanceof OrderActivity) {
+                    ((OrderActivity) mContext).editOrder(order);
                 }
             });
 
             buttonDelete.setOnClickListener(v -> {
-                // Llamar al método deleteProduct de MainActivity con el producto a eliminar
-                if (mContext instanceof MainActivity) {
-                    ((MainActivity) mContext).deleteProduct(product);
+                // Llamar al método deleteOrder de OrderActivity con el ordero a eliminar
+                if (mContext instanceof OrderActivity) {
+                    ((OrderActivity) mContext).deleteOrder(order);
                 }
             });
         }

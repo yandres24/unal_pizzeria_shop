@@ -3,14 +3,43 @@
     <!-- Definición de price_format -->
     <string name="price_format">%.2f</string>
     <!-- Otros Strings del activity_main-->
+    <string name="tittle_add_product">Agregar producto</string>
     <string name="hint_id">ID</string>
     <string name="hint_name">Nombre</string>
     <string name="hint_price">Precio</string>
+    <string name="hint_amount">Cantidad</string>
     <string name="button_add">Agregar</string>
-    <string name="button_get_sqlite">Ver SQLite</string>
-    <string name="button_get_firebase">Ver Firebase</string>
-    <string name="button_synchronize_firebase">Sincronizar Firebase</string>
+    <string name="button_get_sqlite">Información local</string>
+    <string name="button_get_firebase">Obtener de la nube</string>
+    <string name="button_synchronize_firebase">Sincronizar nube</string>
+    <string name="tittle_add_order">Agregar orden</string>
     <!-- String del layout de los items -->
     <string name="item_button_add">Editar</string>
     <string name="item_button_delete">Eliminar</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Productos</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="hint_userId">Usuario</string>
+    <string name="hint_date">Fecha</string>
+
+    <string name="hint_email">Correo electronico</string>
+    <string name="hint_phone">Telefono</string>
+    <string name="hint_user_name">Nombres</string>
+    <string name="hint_last_name">Apellidos</string>
+    <string name="hint_birthdate">Fecha Cumpleaños</string>
+    <string name="tittle_add_product_for_order">Agregar producto para una orden</string>
+    <string name="hint_order">Pedido</string>
+    <string name="hint_product">Producto</string>
+
+    <string name="AuthenticationActivity_Logintitle_title">Inicio de sesión</string>
+    <string name="AuthenticationActivity_username_hint">Nombre de usuario</string>
+    <string name="AuthenticationActivity_password_hint">Contraseña</string>
+    <string name="AuthenticationActivity_login_button_text">Iniciar sesión</string>
+    <string name="AuthenticationActivity_google_login_button_text">Iniciar sesión con Google</string>
+    <string name="AuthenticationActivity_authentication_explanation">Aquí explicaremos qué es la autenticación de usuario, los diferentes tipos y su importancia en el desarrollo de software.</string>
+    <string name="AuthenticationActivity_footer_image_description">Descripción de la imagen de pie de página</string>
+    <string name="default_web_client_id">637631475222-4kh1h4v5atj594fnv80qnlsi36s1itkg.apps.googleusercontent.com</string>
+    <string name="tittle_add_user">Agregar Usuario</string>
+
 </resources>

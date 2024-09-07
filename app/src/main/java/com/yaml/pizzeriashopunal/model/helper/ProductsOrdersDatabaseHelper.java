@@ -1,14 +1,12 @@
-package com.yaml.pizzeriashopunal.helper;
+package com.yaml.pizzeriashopunal.model.helper;
 
 import static com.google.common.base.Strings.nullToEmpty;
-import static com.yaml.pizzeriashopunal.utils.constants.TABLE_PRODUCTS;
 import static com.yaml.pizzeriashopunal.utils.constants.TABLE_PRODUCTSORDERS;
 
 import android.content.ContentValues;
 import android.content.Context;
 
 import com.yaml.pizzeriashopunal.model.ProductsOrders;
-import com.yaml.pizzeriashopunal.model.Users;
 
 import java.util.ArrayList;
 import java.util.List;

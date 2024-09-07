@@ -8,7 +8,7 @@ public class Orders {
     private String id; // Identificador único de la orden
     private String user_id; // Identificador único del usuario
     private String date; // Fecha de producto
-
+    private boolean deleted; // Indica si el producto ha sido eliminado
     // Constructor vacío necesario para ciertas integraciones como Firebase
     public Orders() {
     }
@@ -48,6 +48,15 @@ public class Orders {
     // Establece la fecha de la orden
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    // Establece el estado de eliminación del producto
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 
     // Convierte las propiedades del producto en un mapa para almacenamiento o envío

@@ -1,4 +1,4 @@
-package com.yaml.pizzeriashopunal.monitor;
+package com.yaml.pizzeriashopunal.utils.monitor;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

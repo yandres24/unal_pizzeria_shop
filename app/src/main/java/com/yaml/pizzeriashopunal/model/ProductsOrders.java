@@ -10,6 +10,7 @@ public class ProductsOrders {
     private String product_id; // Identificador único del usuario
     private int amount; // Fecha de producto
     private double price; // Fecha de producto
+    private boolean deleted; // Indica si el producto ha sido eliminado
 
     // Constructor vacío necesario para ciertas integraciones como Firebase
     public ProductsOrders() {
@@ -72,6 +73,15 @@ public class ProductsOrders {
     // Establece el precio del prodcuto adquirido
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    // Establece el estado de eliminación del producto
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 
     // Convierte las propiedades del producto en un mapa para almacenamiento o envío

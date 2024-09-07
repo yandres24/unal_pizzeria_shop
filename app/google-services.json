@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "637631475222",
+    "firebase_url": "https://pizzeria-shop-unal-default-rtdb.firebaseio.com",
     "project_id": "pizzeria-shop-unal",
     "storage_bucket": "pizzeria-shop-unal.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.yaml.pizzeriashopunal"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "637631475222-ivn0ntgvmjn5qjfncm1epvug4l1htcql.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yaml.pizzeriashopunal",
+            "certificate_hash": "5b060d0d2727a5393c745dcc28719fbd35959f3a"
+          }
+        },
+        {
+          "client_id": "637631475222-4kh1h4v5atj594fnv80qnlsi36s1itkg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyC_8VHmnPr5lzI6a0bEOW-573NHE4kJlWI"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "637631475222-4kh1h4v5atj594fnv80qnlsi36s1itkg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
